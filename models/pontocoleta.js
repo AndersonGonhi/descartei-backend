@@ -16,6 +16,10 @@ const PontoColetaSchema = new mongoose.Schema({
     numeroContato: {
         type: String,
         required: true
+    },
+    itensColeta: {
+        type: Array,
+        required: true
     }
 });
 

@@ -1,11 +1,14 @@
 const express = require('express');
 const connectDB = require('./config/db');
 const pontoColetaRoutes = require('./routes/pontocoleta');
+const cors = require('cors');
 
 const app = express();
 
 // Conectar ao banco de dados
 connectDB();
+
+app.use(cors());
 
 // Middlewares
 app.use(express.json());

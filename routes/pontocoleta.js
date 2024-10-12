@@ -4,14 +4,15 @@ const PontoColeta = require('../models/pontocoleta');
 
 // Rota para cadastrar um ponto de coleta
 router.post('/pontocoleta', async (req, res) => {
-    const { nomeEntidade, estado, cidade, numeroContato } = req.body;
+    const { nomeEntidade, estado, cidade, numeroContato, itensColeta } = req.body;
 
     try {
         const novoPonto = new PontoColeta({
             nome:nomeEntidade,
             estado,
             cidade,
-            numeroContato
+            numeroContato,
+            itensColeta
         });
 
         await novoPonto.save();
