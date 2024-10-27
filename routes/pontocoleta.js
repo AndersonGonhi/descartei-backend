@@ -4,11 +4,13 @@ const PontoColeta = require('../models/pontocoleta');
 
 // Rota para cadastrar um ponto de coleta
 router.post('/pontocoleta', async (req, res) => {
-    const { nomeEntidade, estado, cidade, numeroContato, itensColeta } = req.body;
+    const { nomeEntidade, endereco, numero, estado, cidade, numeroContato, itensColeta } = req.body;
 
     try {
         const novoPonto = new PontoColeta({
-            nome:nomeEntidade,
+            nome: nomeEntidade,
+            endereco,
+            numero,
             estado,
             cidade,
             numeroContato,
@@ -21,6 +23,7 @@ router.post('/pontocoleta', async (req, res) => {
         res.status(500).json({ error: 'Erro ao cadastrar ponto de coleta' });
     }
 });
+
 
 // Rota para listar pontos de coleta por cidade e estado, ou apenas estado
 router.get('/pontocoleta', async (req, res) => {

@@ -5,6 +5,14 @@ const PontoColetaSchema = new mongoose.Schema({
         type: String,
         required: true
     },
+    endereco: {
+        type: String,
+        required: true
+    },
+    numero: {
+        type: String,
+        required: true
+    },
     estado: {
         type: String,
         required: true
